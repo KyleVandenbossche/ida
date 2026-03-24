@@ -1,5 +1,6 @@
-import React from "react";
 import { Link } from "react-router-dom";
+import React from "react";
+import Navbar from "./Navbar";
 
 const books = [
   {
@@ -31,28 +32,18 @@ const books = [
 export default function Publications() {
   return (
     <div className="publications-page">
-      <header className="top-nav">
-        <div className="nav-logo">
-          <span>Ida Byrd</span>
-          <span>Hill</span>
-        </div>
-
-        <nav className="nav-links">
-          <Link to="/">Home</Link>
-          <Link to="/book" className="nav-button">
-            Book Ida
-          </Link>
-        </nav>
-      </header>
+      <Navbar />
 
       <section className="publications-hero">
         <div className="publications-hero-inner">
           <p className="section-label">Publications</p>
-          <h1 className="publications-title">Books, insights, and thought leadership.</h1>
+          <h1 className="publications-title">
+            Books, insights, and thought leadership.
+          </h1>
           <p className="publications-subtitle">
             Explore Ida Byrd Hill’s publications, resources, and featured works.
-            This is a foundation page that can later include direct purchase links,
-            testimonials, featured excerpts, and media coverage.
+            This is a foundation page that can later include direct purchase
+            links, testimonials, featured excerpts, and media coverage.
           </p>
         </div>
       </section>

@@ -59,10 +59,9 @@ export default function Hero() {
             </p>
 
             <h1 className="hero-title">
-              <span>Lorem ipsum dolor</span>
-              <span>sit amet,</span>
-              <span>consectetur</span>
-              <span>adipiscing elit</span>
+              <span>Helping Organizations</span>
+              <span>Prepare for the</span>
+              <span>Workforce Shift</span>
             </h1>
 
             <p className="hero-description">
@@ -88,6 +87,12 @@ export default function Hero() {
             <p className="hero-mobile-intro">
               Detroit Metro • CEO • Author • Keynote Speaker
             </p>
+            <h1 className="hero-title-image">
+              <span>Helping Organizations </span>
+              <span>Prepare for the </span>
+              <span>Workforce </span>
+              <span>Shift </span>
+            </h1>
 
             <img
               src={transparentIda}
@@ -100,13 +105,14 @@ export default function Hero() {
 
       <section id="about" className="content-section light-section">
         <div className="section-inner reveal">
-          <p className="section-label">About</p>
+          <p className="section-label-about">About</p>
           <h2 className="keynote-large">
-            A voice that connects vision with action.
+            Work Is Changing. Are You Ready?
           </h2>
           <p>
-            This section can later become Ida’s full bio. For now, it gives the
-            homepage structure and helps the navigation feel complete.
+            Ida Byrd-Hill delivers more than keynotes — she delivers a shift in 
+            perspective. With unmatched insight at the intersection of workforce 
+            innovation, technology, and leadership, Ida equips audiences with the clarity and confidence needed to navigate what’s next. If your organization is ready to challenge outdated thinking and activate real change, this is the conversation you want in the room.
           </p>
         </div>
       </section>
@@ -116,9 +122,10 @@ export default function Hero() {
           <div className="keynotes-stack">
             <div className="keynotes-row">
               <div className="keynotes-text">
-                <p className="section-label">Keynotes</p>
+                <p className="section-label-keynotes">Keynotes</p>
                 <h2>Topics that move audiences forward.</h2>
                 <p>FORGET YOUR GRANDAD</p>
+                <p>The rules of work have changed — and the organizations that thrive will be the ones bold enough to rethink talent, technology, and access. In this keynote, Ida challenges outdated workforce models and reveals how leaders can build future-ready teams today.</p>
               </div>
 
               <div className="keynotes-video">
@@ -159,6 +166,7 @@ export default function Hero() {
                 <p className="section-label">Featured Talk</p>
                 <h2>Lorem ipsum dolor sit amet.</h2>
                 <p>UNLEASH YOUR INNER CEO</p>
+                <p>You can be busy, active, and still going nowhere — just like a rocking chair. Ida shows audiences how to shift from motion to momentum and lead with true CEO-level thinking</p>
               </div>
             </div>
           </div>
