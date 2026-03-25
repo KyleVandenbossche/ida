@@ -35,26 +35,15 @@ export default function Hero() {
 
   return (
     <div className="page">
-      <header className={`top-nav ${navShrunk ? "shrink" : ""}`}>
-        <Link to="/" className="nav-logo">
-          <span>Ida Byrd</span>
-          <span>Hill</span>
-        </Link>
 
-        <nav className="nav-links">
-          <a href="#about">About</a>
-          <a href="#keynotes">Keynotes</a>
-          <Link to="/publications">Publications</Link>
-          <Link to="/book" className="nav-button">
-            Book Ida
-          </Link>
-        </nav>
-      </header>
+
 
       <section className="hero-split">
+
         <div className="hero-split-inner">
+
           <div className="hero-left reveal">
-            <p className="hero-intro">
+                                    <p className="hero-intro">
               Detroit Metro • CEO • Author • Keynote Speaker
             </p>
 
@@ -123,8 +112,7 @@ export default function Hero() {
             <div className="keynotes-row">
               <div className="keynotes-text">
                 <p className="section-label-keynotes">Keynotes</p>
-                <h2>Topics that move audiences forward.</h2>
-                <p>FORGET YOUR GRANDAD</p>
+                <h2>FORGET YOUR GRANDAD</h2>
                 <p>The rules of work have changed — and the organizations that thrive will be the ones bold enough to rethink talent, technology, and access. In this keynote, Ida challenges outdated workforce models and reveals how leaders can build future-ready teams today.</p>
               </div>
 
@@ -164,8 +152,7 @@ export default function Hero() {
 
               <div className="keynotes-text">
                 <p className="section-label">Featured Talk</p>
-                <h2>Lorem ipsum dolor sit amet.</h2>
-                <p>UNLEASH YOUR INNER CEO</p>
+                <h2>UNLEASH YOUR INNER CEO</h2>
                 <p>You can be busy, active, and still going nowhere — just like a rocking chair. Ida shows audiences how to shift from motion to momentum and lead with true CEO-level thinking</p>
               </div>
             </div>

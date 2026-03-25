@@ -51,16 +51,7 @@ export default function Form() {
 
   return (
     <div className="form-page">
-      <header className="top-nav">
-        <div className="nav-logo">
-          <span>Ida Byrd</span>
-          <span>Hill</span>
-        </div>
 
-        <nav className="nav-links">
-          <Link to="/">Back Home</Link>
-        </nav>
-      </header>
 
       <section className="form-section">
         <div className="form-wrapper">

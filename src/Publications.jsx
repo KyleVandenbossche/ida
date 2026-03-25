@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import React from "react";
-import Navbar from "./Navbar";
 
 const books = [
   {
@@ -32,7 +31,6 @@ const books = [
 export default function Publications() {
   return (
     <div className="publications-page">
-      <Navbar />
 
       <section className="publications-hero">
         <div className="publications-hero-inner">
