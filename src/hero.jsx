@@ -2,6 +2,27 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import transparentIda from "./transparent-ida.png";
 
+const testimonials = [
+  {
+    quote:
+      "Ida doesn't just inspire — she equips. Our team left with real tools and a completely new sense of direction.",
+    name: "Marcus T.",
+    role: "HR Director, Detroit",
+  },
+  {
+    quote:
+      "One of the most impactful speakers we've ever brought in. She reads the room and delivers every time.",
+    name: "Priya M.",
+    role: "Workforce Development Manager",
+  },
+  {
+    quote:
+      "Ida's message on career reinvention changed how I saw my own future. Absolutely transformational.",
+    name: "Jasmine W.",
+    role: "Program Participant",
+  },
+];
+
 export default function Hero() {
   const [navShrunk, setNavShrunk] = useState(false);
 
@@ -35,15 +56,10 @@ export default function Hero() {
 
   return (
     <div className="page">
-
-
-
       <section className="hero-split">
-
         <div className="hero-split-inner">
-
           <div className="hero-left reveal">
-                                    <p className="hero-intro">
+            <p className="hero-intro">
               Detroit Metro • CEO • Author • Keynote Speaker
             </p>
 
@@ -95,13 +111,14 @@ export default function Hero() {
       <section id="about" className="content-section light-section">
         <div className="section-inner reveal">
           <p className="section-label-about">About</p>
-          <h2 className="keynote-large">
-            Work Is Changing. Are You Ready?
-          </h2>
+          <h2 className="keynote-large">Work Is Changing. Are You Ready?</h2>
           <p>
-            Ida Byrd-Hill delivers more than keynotes — she delivers a shift in 
-            perspective. With unmatched insight at the intersection of workforce 
-            innovation, technology, and leadership, Ida equips audiences with the clarity and confidence needed to navigate what’s next. If your organization is ready to challenge outdated thinking and activate real change, this is the conversation you want in the room.
+            Ida Byrd-Hill delivers more than keynotes — she delivers a shift in
+            perspective. With unmatched insight at the intersection of workforce
+            innovation, technology, and leadership, Ida equips audiences with the
+            clarity and confidence needed to navigate what’s next. If your
+            organization is ready to challenge outdated thinking and activate
+            real change, this is the conversation you want in the room.
           </p>
         </div>
       </section>
@@ -113,7 +130,13 @@ export default function Hero() {
               <div className="keynotes-text">
                 <p className="section-label-keynotes">Keynotes</p>
                 <h2>FORGET YOUR GRANDAD</h2>
-                <p>The rules of work have changed — and the organizations that thrive will be the ones bold enough to rethink talent, technology, and access. In this keynote, Ida challenges outdated workforce models and reveals how leaders can build future-ready teams today.</p>
+                <p>
+                  The rules of work have changed — and the organizations that
+                  thrive will be the ones bold enough to rethink talent,
+                  technology, and access. In this keynote, Ida challenges
+                  outdated workforce models and reveals how leaders can build
+                  future-ready teams today.
+                </p>
               </div>
 
               <div className="keynotes-video">
@@ -153,7 +176,11 @@ export default function Hero() {
               <div className="keynotes-text">
                 <p className="section-label">Featured Talk</p>
                 <h2>UNLEASH YOUR INNER CEO</h2>
-                <p>You can be busy, active, and still going nowhere — just like a rocking chair. Ida shows audiences how to shift from motion to momentum and lead with true CEO-level thinking</p>
+                <p>
+                  You can be busy, active, and still going nowhere — just like a
+                  rocking chair. Ida shows audiences how to shift from motion to
+                  momentum and lead with true CEO-level thinking
+                </p>
               </div>
             </div>
           </div>
@@ -173,6 +200,27 @@ export default function Hero() {
             <Link to="/book" className="hero-cta">
               BOOK IDA NOW
             </Link>
+          </div>
+        </div>
+      </section>
+
+      <section id="testimonials" className="content-section testimonials-section">
+        <div className="section-inner reveal">
+          <p className="section-label-about">Testimonials</p>
+          <h2 className="keynote-large">The Room Always Remembers</h2>
+
+          <div className="testimonials-grid">
+            {testimonials.map((t, i) => (
+              <article className="testimonial-card reveal" key={i}>
+                <div className="testimonial-quote-mark">“</div>
+                <p className="testimonial-quote">{t.quote}</p>
+
+                <div className="testimonial-meta">
+                  <div className="testimonial-name">{t.name}</div>
+                  <div className="testimonial-role">{t.role}</div>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
