@@ -6,7 +6,7 @@ const books = [
     title: "Invisible Talent Market",
     subtitle: "Lorem ipsum dolor sit amet",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. This space can hold the real book summary, endorsements, or a short sales pitch.",
+      "In Invisible Talent Market, Ida Byrd-Hill exposes one of the most overlooked challenges facing modern organizations: the vast pool of capable talent that remains unseen, undervalued, and underutilized. Drawing from her deep expertise across workforce development, executive search, and technology, Ida reveals how businesses can identify, develop, and activate hidden talent to drive innovation, growth, and long-term competitive advantage. This book challenges leaders to rethink traditional hiring models and offers a forward-thinking roadmap for building more inclusive, future-ready workforces.",
     buttonText: "Buy Book",
     link: "#",
   },

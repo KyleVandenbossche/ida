@@ -128,7 +128,6 @@ export default function Hero() {
           <div className="keynotes-stack">
             <div className="keynotes-row">
               <div className="keynotes-text">
-                <p className="section-label-keynotes">Keynotes</p>
                 <h2>FORGET YOUR GRANDAD</h2>
                 <p>
                   The rules of work have changed — and the organizations that
@@ -174,7 +173,6 @@ export default function Hero() {
               </div>
 
               <div className="keynotes-text">
-                <p className="section-label">Featured Talk</p>
                 <h2>UNLEASH YOUR INNER CEO</h2>
                 <p>
                   You can be busy, active, and still going nowhere — just like a
@@ -187,22 +185,22 @@ export default function Hero() {
         </div>
       </section>
 
-      <section id="book" className="content-section accent-section">
-        <div className="section-inner reveal">
-          <p className="section-label">Book Ida</p>
-          <h2>Ready to bring Ida to your event?</h2>
-          <p>
-            Click below to complete a booking inquiry form for speaking
-            engagements, media appearances, workshops, or consulting.
-          </p>
+<section id="book" className="content-section book-section">
+  <div className="section-inner reveal">
+    <p className="section-label-about">Book Ida</p>
+    <h2 className="keynote-large">Ready to bring Ida to your event?</h2>
+    <p>
+      Click below to complete a booking inquiry form for speaking
+      engagements, media appearances, workshops, or consulting.
+    </p>
 
-          <div style={{ marginTop: "24px" }}>
-            <Link to="/book" className="hero-cta">
-              BOOK IDA NOW
-            </Link>
-          </div>
-        </div>
-      </section>
+    <div className="book-section-cta-wrap">
+      <Link to="/book" className="hero-cta">
+        BOOK IDA NOW
+      </Link>
+    </div>
+  </div>
+</section>
 
       <section id="testimonials" className="content-section testimonials-section">
         <div className="section-inner reveal">
