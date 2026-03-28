@@ -95,8 +95,7 @@ export default function Hero() {
             <h1 className="hero-title-image">
               <span>Helping Organizations </span>
               <span>Prepare for the </span>
-              <span>Workforce </span>
-              <span>Shift </span>
+              <span>Workforce Shift </span>
             </h1>
 
             <img

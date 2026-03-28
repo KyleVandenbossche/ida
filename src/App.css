@@ -692,18 +692,18 @@ a {
     transform: none;
   }
 
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 26px;
-  font-family: Arial, Helvetica, sans-serif;
-}
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
 
   .nav-links a {
     font-size: 0.8rem;
   }
 
-  /* HERO MOBILE */
+  /* HERO MOBILE FIX */
   .hero-split,
   .hero-split-inner {
     width: 100%;
@@ -715,90 +715,70 @@ a {
     flex-direction: column;
   }
 
-.hero-right {
-  order: 1 !important;
-  min-height: auto !important;
-  padding: 0 20px 8px !important;
+  .hero-right {
+    order: 1;
+    min-height: auto;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: flex-end !important;
+    padding: 20px 20px 0 !important;
+    overflow: hidden;
+  }
 
-  display: grid !important;
-  grid-template-columns: 33% 67% !important;
-  grid-template-rows: auto 1fr !important;
-  align-items: start !important;
-}
+  .hero-image {
+    width: min(92vw, 520px) !important;
+    max-width: 100% !important;
+    height: auto !important;
+    transform: none !important;
+    margin: 0 auto !important;
+    object-fit: contain !important;
+    object-position: center bottom !important;
+  }
 
-
-/* text only in top-left area */
-.hero-title-image {
-  color:#ba1934;
-  grid-column: 1 !important;
-  grid-row: 2 !important;
-  display: block !important;
-  align-self: start !important;
-  margin: 5 !important;
-  padding: 0 10px 0 0 !important;
-  font-size: clamp(1.6rem, 4vw, 2.4rem) !important;
-  line-height: 0.95 !important;
-  text-align: left !important;
-  position: relative !important;
-  z-index: 2 !important;
-  font-size: clamp(2.5rem, 5vw, 2.8rem) !important;
-  transform: translateY(12px);
-}
-
-.hero-title-image span {
-  display: block !important;
-  text-align: left !important;
-}
-
-.hero-title-image span {
-  display: inline !important;      /* ⬅️ allows natural wrapping */
-}
+  .hero-title-image {
+    display: none !important;
+  }
 
   .hero-left {
     order: 2;
-    padding: 10px 20px 28px;
-    display: flex;              /* changed from grid */
-    flex-direction: column;     /* keeps everything in one block */
-    align-items: flex-start;    /* left align */
-    text-align: left;           /* left align text */
-    gap: 18px;
+    padding: 20px 20px 36px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+  
   }
 
-  .hero-intro {
-    display: none;
-    margin-top: 20px;
+  .hero-intro,
+  .hero-mobile-intro {
+    display: none !important;
   }
 
-/* row 1 */
-/* full-width top intro */
-.hero-mobile-intro {
-  grid-column: 1 / -1 !important;
-  grid-row: 1 !important;
-  display: block !important;
-  text-align: center !important;
-  margin: 0 0 12px 0 !important;
-}
+  .hero-title {
+    display: flex !important;
+    font-size: clamp(2.2rem, 8vw, 3.4rem) !important;
+    line-height: 0.98 !important;
+    max-width: 100% !important;
+    margin: 0 0 10px 0 !important;
+    align-items: center !important;
+  }
 
-.hero-image {
-  grid-column: 2 !important;
-  grid-row: 2 !important;
-  width: 180% !important;
-  max-width: none !important;
-  height: auto !important;
-  justify-self: start !important;
-  transform: translateX(-160px); /* 👈 smooth push right */
-  margin: 5px 0 0 0 !important;
-  object-fit: contain !important;
-  object-position: top center !important;
-}
+  .hero-title span {
+    display: block !important;
+    text-align: center !important;
+  }
 
-.hero-title {
-  display: none !important;
-}
-
+  .hero-description {
+    max-width: 640px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+  }
 
   .hero-cta {
     width: 100%;
+    max-width: 420px;
     margin-top: 18px;
   }
 }
@@ -1189,26 +1169,3 @@ a {
   }
 }
 
-@media (max-width: 768px) {
-  .publications-hero {
-    padding: 60px 20px 36px;
-  }
-
-  .publications-grid-section,
-  .publications-feature {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
-  .publication-card {
-    padding: 20px;
-  }
-
-  .publication-button {
-    width: 100%;
-  }
-
-  .publications-feature-inner {
-    padding: 24px;
-  }
-}
