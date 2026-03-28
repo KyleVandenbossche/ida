@@ -676,7 +676,7 @@ a {
     min-height: 86px;
     height: auto;
     flex-wrap: wrap;
-    gap: 14px;
+    gap: 10px;
   }
 
   .top-nav.shrink {

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 
 export default function Form() {
   const [formData, setFormData] = useState({
@@ -16,7 +15,11 @@ export default function Form() {
     message: "",
   });
 
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState({
+    loading: false,
+    success: "",
+    error: "",
+  });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -27,32 +30,56 @@ export default function Form() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log("Form submitted:", formData);
+    setStatus({ loading: true, success: "", error: "" });
 
-    setSubmitted(true);
+    try {
+      const response = await fetch("/.netlify/functions/send-booking", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-    setFormData({
-      firstName: "",
-      lastName: "",
-      organization: "",
-      email: "",
-      phone: "",
-      eventType: "",
-      eventDate: "",
-      location: "",
-      audienceSize: "",
-      budget: "",
-      message: "",
-    });
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.message || "Submission failed");
+      }
+
+      setStatus({
+        loading: false,
+        success: "Thank you. Your inquiry has been submitted.",
+        error: "",
+      });
+
+      setFormData({
+        firstName: "",
+        lastName: "",
+        organization: "",
+        email: "",
+        phone: "",
+        eventType: "",
+        eventDate: "",
+        location: "",
+        audienceSize: "",
+        budget: "",
+        message: "",
+      });
+    } catch (error) {
+      setStatus({
+        loading: false,
+        success: "",
+        error: error.message || "Something went wrong.",
+      });
+    }
   };
 
   return (
     <div className="form-page">
-
-
       <section className="form-section">
         <div className="form-wrapper">
           <div className="form-header">
@@ -64,10 +91,12 @@ export default function Form() {
             </p>
           </div>
 
-          {submitted && (
-            <div className="form-success">
-              Thank you. Your inquiry has been submitted.
-            </div>
+          {status.success && (
+            <div className="form-success">{status.success}</div>
+          )}
+
+          {status.error && (
+            <div className="form-error">{status.error}</div>
           )}
 
           <form className="booking-form" onSubmit={handleSubmit}>
@@ -138,7 +167,9 @@ export default function Form() {
                   <option value="Workshop">Workshop</option>
                   <option value="Panel">Panel</option>
                   <option value="Podcast">Podcast / Interview</option>
-                  <option value="Corporate Training">Corporate Training</option>
+                  <option value="Corporate Training">
+                    Corporate Training
+                  </option>
                   <option value="Other">Other</option>
                 </select>
               </div>
@@ -191,12 +222,17 @@ export default function Form() {
                 rows="6"
                 value={formData.message}
                 onChange={handleChange}
+                required
                 placeholder="Share event details, goals, timing, and anything else helpful."
               ></textarea>
             </div>
 
-            <button type="submit" className="form-submit-btn">
-              Submit Inquiry
+            <button
+              type="submit"
+              className="form-submit-btn"
+              disabled={status.loading}
+            >
+              {status.loading ? "Sending..." : "Submit Inquiry"}
             </button>
           </form>
         </div>
