@@ -43,6 +43,14 @@ exports.handler = async (event) => {
       };
     }
 
+    console.log("ENV CHECK", {
+  ZOHO_HOST: process.env.ZOHO_HOST,
+  ZOHO_PORT: process.env.ZOHO_PORT,
+  ZOHO_USER: process.env.ZOHO_USER,
+  FORM_TO: process.env.FORM_TO,
+  HAS_ZOHO_PASS: !!process.env.ZOHO_PASS,
+});
+
     const transporter = nodemailer.createTransport({
       host: process.env.ZOHO_HOST,
       port: Number(process.env.ZOHO_PORT || 465),
@@ -110,13 +118,15 @@ ${message}
       body: JSON.stringify({ message: "Inquiry sent successfully." }),
     };
   } catch (error) {
-    console.error("Email send error:", error);
+  console.error("Email send error:", error);
+  console.error("Error message:", error.message);
+  console.error("Error stack:", error.stack);
 
-    return {
-      statusCode: 500,
-      body: JSON.stringify({
-        message: "There was a problem sending the inquiry.",
-      }),
-    };
-  }
+  return {
+    statusCode: 500,
+    body: JSON.stringify({
+      message: "There was a problem sending the inquiry.",
+    }),
+  };
+}
 };

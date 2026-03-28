@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import React from "react";
+import cultureRewired from "./culture-rewired.jpg";
+import invisibleTalentMarket from "./invisible-talent-market.jpg";
 
 const books = [
   {
@@ -9,23 +11,18 @@ const books = [
       "In Invisible Talent Market, Ida Byrd-Hill exposes one of the most overlooked challenges facing modern organizations: the vast pool of capable talent that remains unseen, undervalued, and underutilized. Drawing from her deep expertise across workforce development, executive search, and technology, Ida reveals how businesses can identify, develop, and activate hidden talent to drive innovation, growth, and long-term competitive advantage. This book challenges leaders to rethink traditional hiring models and offers a forward-thinking roadmap for building more inclusive, future-ready workforces.",
     buttonText: "Buy Book",
     link: "#",
+    image: invisibleTalentMarket,
   },
   {
-    title: "Publication Title Two",
+    title: "Culture Re-Wired: Unleash Your Inner AI CEO",
     subtitle: "Consectetur adipiscing elit",
     description:
-      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. This is a placeholder for a second title, workbook, or featured publication.",
+      "In a world where artificial intelligence (AI) is transforming everything — how we work, communicate, and innovate —Culture Re-Wired: Unleash Your Inner AI CEO reveals the powerful truth: it’s not the technology that drives change. It’s the culture. This groundbreaking book empowers CHROs, CFOs, CIOs, CLOs and aspiring leaders to rewire their organizations from the inside out, starting with the overlooked backbone of every company—front-liners. Whether you're leading a startup, a mid-market manufacturer, or a global enterprise, this book offers a clear roadmap to activate your Inner CEO mindset and unlock exponential profits.",
     buttonText: "Learn More",
     link: "#",
+    image: cultureRewired,
   },
-  {
-    title: "Publication Title Three",
-    subtitle: "Sed do eiusmod tempor",
-    description:
-      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Use this card for another book, guide, journal, or digital resource.",
-    buttonText: "Buy Book",
-    link: "#",
-  },
+
 ];
 
 export default function Publications() {
@@ -50,11 +47,19 @@ export default function Publications() {
         <div className="publications-grid">
           {books.map((book, index) => (
             <article className="publication-card" key={index}>
-              <div className="publication-cover">
-                <div className="publication-cover-inner">
-                  <span className="publication-cover-label">Book Cover</span>
-                </div>
-              </div>
+<div className="publication-cover">
+  {book.image ? (
+    <img
+      src={book.image}
+      alt={book.title}
+      className="publication-cover-img"
+    />
+  ) : (
+    <div className="publication-cover-inner">
+      <span className="publication-cover-label">Book Cover</span>
+    </div>
+  )}
+</div>
 
               <div className="publication-content">
                 <p className="publication-subtitle">{book.subtitle}</p>
@@ -75,7 +80,7 @@ export default function Publications() {
         </div>
       </section>
 
-      <section className="publications-feature">
+      {/* <section className="publications-feature">
         <div className="publications-feature-inner">
           <div className="publications-feature-left">
             <p className="section-label">Featured Work</p>
@@ -94,7 +99,7 @@ export default function Publications() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }
